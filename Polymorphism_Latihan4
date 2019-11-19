@@ -1,0 +1,81 @@
+
+package Latihan_;
+
+
+public class Shape {
+    private String color;
+    public Shape (String color){
+        this.color = color;
+        
+    }
+    public String toString(){
+        return "Shape[color=" + color +"]";
+    }
+    public double getArea(){
+        System.err.println("Bentuk tidak tahu! tidak dapat menghitung area");
+        return 0;
+    }
+}
+
+
+package Latihan_;
+
+
+public class Rectangle extends Shape {
+    private int length;
+    private int width;
+    
+    public Rectangle(String color, int length, int width) {
+        super(color);
+        this.length = length;
+        this.width = width;
+    }
+    public String toString(){
+        return "Retangle[length=" + length + ",width=" + width + "," +super.toString() + "]";
+    }
+    public double getArea(){
+        return length*width;
+    }
+}
+
+
+package Latihan_;
+
+
+public class TestShape {
+    public static void main(String[] args) {
+        Shape a = new Rectangle("red" , 4, 5);
+        System.out.println(a);
+        System.out.println("Luasnya persegi adalah " + a.getArea());
+        
+        Shape b = new Triangle("blue" , 4, 5);
+        System.out.println(b);
+        System.out.println("Luasnya segitiga adalah " + b.getArea());
+    }
+}
+
+
+
+package Latihan_;
+
+
+public class Triangle extends Shape {
+
+    private int base;
+    private int height;
+
+    public Triangle(String color, int base, int height) {
+        super(color);
+        this.base = base;
+        this.height = height;
+    }
+
+    public String toSttring() {
+        return "Triangle[base=" + base + ",height=" + height + "," + super.toString() + "]";
+    }
+
+    public double getArea() {
+        return 0.5*base*height;
+    }
+    }
+
