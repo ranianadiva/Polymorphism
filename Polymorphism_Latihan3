@@ -1,0 +1,76 @@
+
+package Latihan_;
+
+
+public class Pegawai {
+    String nama;
+    int gaji;
+    Pegawai(){
+    }
+
+    Pegawai(String name){
+        this.nama=name;
+        System.out.println("Pegawai");
+    }
+            public int gaji(){
+                return 0;
+            }
+    }
+
+
+package Latihan_;
+
+
+public class Direktur extends Pegawai{
+    private static final int gajiDir=100000;
+    private static final int tunjangan=50000;
+    
+    public int gaji(){
+        return gajiDir;
+        
+    }
+    public int tunjangan(){
+        return tunjangan;
+    }
+}
+
+
+package Latihan_;
+
+
+public class Staf extends Pegawai{
+    private static final int gajiStaf=50000;
+    private static final int bonusStaf=50000;
+    
+    public int gaji(){
+        return gajiStaf;
+    }
+    
+    public int Bonus(){
+        return bonusStaf;
+    }
+}
+
+
+package Latihan_;
+
+
+public class PembayaranGaji {
+    public int hitungGaji(Pegawai peg){
+        int uang=peg.gaji;
+        if(peg instanceof Direktur)
+            uang+=((Direktur)peg).tunjangan() + ((Direktur)peg).gaji();
+        if(peg instanceof Staf)
+            uang+=((Staf)peg).Bonus()  + ((Staf)peg).gaji();
+        return uang;
+    }
+    public static void main(String[] args) {
+        PembayaranGaji pg = new PembayaranGaji();
+        Staf Sara = new Staf();
+        Direktur Tegar = new Direktur();
+        System.out.println("Gaji yang dibayarkan untuk Staf " + pg.hitungGaji(Sara));
+        System.out.println("Gaji yang dibayarkan kepada Direktur " + pg.hitungGaji(Tegar));
+    }
+}
+
+
