@@ -1,0 +1,32 @@
+package Latihan_;
+
+public abstract class Vehicle {
+
+    public void function() {
+        System.out.println("Transportasi Tools");
+    }
+
+    public abstract void fuel();
+
+    public abstract void walk();
+}
+
+package Latihan_;
+
+public class AeroPlan extends Vehicle {
+
+    public void walk() {
+        System.out.println("Aeroplan is flying");
+    }
+
+    public void fuel() {
+        System.out.println("ini fuel");
+    }
+
+    public static void main(String[] args) {
+        AeroPlan a = new AeroPlan();
+        a.function();
+        a.fuel();
+        a.walk();
+    }
+}
