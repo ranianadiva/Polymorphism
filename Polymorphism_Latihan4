@@ -38,24 +38,6 @@ public class Rectangle extends Shape {
     }
 }
 
-
-package Latihan_;
-
-
-public class TestShape {
-    public static void main(String[] args) {
-        Shape a = new Rectangle("red" , 4, 5);
-        System.out.println(a);
-        System.out.println("Luasnya persegi adalah " + a.getArea());
-        
-        Shape b = new Triangle("blue" , 4, 5);
-        System.out.println(b);
-        System.out.println("Luasnya segitiga adalah " + b.getArea());
-    }
-}
-
-
-
 package Latihan_;
 
 
@@ -78,4 +60,23 @@ public class Triangle extends Shape {
         return 0.5*base*height;
     }
     }
+
+
+package Latihan_;
+
+
+public class TestShape {
+    public static void main(String[] args) {
+        Shape a = new Rectangle("red" , 4, 5);
+        System.out.println(a);
+        System.out.println("Luasnya persegi adalah " + a.getArea());
+        
+        Shape b = new Triangle("blue" , 4, 5);
+        System.out.println(b);
+        System.out.println("Luasnya segitiga adalah " + b.getArea());
+    }
+}
+
+
+
 
